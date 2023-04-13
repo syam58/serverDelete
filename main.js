@@ -8,11 +8,13 @@ const io = require("socket.io")(server, {
 		methods: [ "GET", "POST" ]
 	}
 })
-
 io.on("connection", (socket) => {
 	  console.log("connection established");
 	
+
 	
+	
+        socket.emit("me","socket connection established")
 	socket.on("join-room", (data) => {
 	  console.log(data);
 	  
